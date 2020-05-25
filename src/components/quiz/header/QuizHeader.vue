@@ -1,16 +1,15 @@
 <template>
-    <div id="quiz">
-        <h1>Header</h1>
-        <QuizDescription />
+    <div id="quiz-header">
+        <QuizInstructions />
     </div>
 </template>
 
 <script>
-import QuizDescription from './QuizDescription';
+import QuizInstructions from './QuizInstructions';
 export default {
     name: 'QuizHeader',
     components: {
-        QuizDescription
+        QuizInstructions
     },
     props: {
     }
@@ -19,5 +18,6 @@ export default {
 
 <style scoped>
     #quiz-header {
+        padding: 20px 10px;
     }
 </style>
