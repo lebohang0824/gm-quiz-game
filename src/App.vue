@@ -1,27 +1,31 @@
 <template>
     <div id="app">
-        <hello-world />
+        <Quiz />
     </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Quiz from './components/quiz/Quiz'
 
 export default {
   name: 'App',
     components: {
-        HelloWorld
+        Quiz
     }
 }
 </script>
 
 <style>
-#app {
+body, h1, h2, h3, h4, h5, h6, p {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
+    padding: 0;
+    margin: 0;
+}
+
+#app {
     padding: 0;
     margin: 0;
 }
