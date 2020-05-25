@@ -42,7 +42,8 @@ export default {
             this.pointsVisible = true;
         },
         addPoints: function () {
-            this.points += 10;      
+            this.points += 10;  
+            console.log('Yeiy!!!');    
         }
     }
 }
@@ -50,7 +51,14 @@ export default {
 
 <style scoped>
     #quiz {
-        width: 500px;
+        width: 100%;
         margin: 0 auto;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    @media screen and (min-width: 768px) {
+        #quiz {
+            width: 500px;
+        }
     }
 </style>

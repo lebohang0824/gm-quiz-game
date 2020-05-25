@@ -1,8 +1,8 @@
 <template>
     <form id="start-form" v-on:submit.prevent="onSubmit">
         <div class="group">
-            <label>Name</label>
-            <input type="text" class="input" placeholder="Name" />
+            <label>Username</label>
+            <input type="text" class="input" placeholder="Username" />
         </div>
         <div class="group">
             <label>Difficulty</label>
