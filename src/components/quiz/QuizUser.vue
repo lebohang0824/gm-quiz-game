@@ -15,8 +15,8 @@ export default {
     #quiz-user {
         padding: 20px 10px;
         border-radius: 5px;
+        margin-bottom: 5px;
         text-align: center;
-        margin-block: 20px;
         background-color: #F9F7F8;
         border: solid 1px #F0F2F3;
     }

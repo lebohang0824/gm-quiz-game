@@ -3,6 +3,7 @@
         <QuizHeader />
         <QuizStart @setname="setname" />
         <QuizUser :username="name" :visible="visible" />
+        <QuizItems :quizzes="quizzes" :visible="visible" />
     </div>
 </template>
 
@@ -10,12 +11,14 @@
 import QuizHeader from './header/QuizHeader';
 import QuizStart from './start/QuizStart';
 import QuizUser from './QuizUser';
+import QuizItems from './items/QuizItems';
 export default {
     name: 'Quiz',
     components: {
         QuizHeader,
         QuizStart,
-        QuizUser
+        QuizUser,
+        QuizItems
     },
     data() {
         return {
