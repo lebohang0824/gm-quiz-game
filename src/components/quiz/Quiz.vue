@@ -3,7 +3,8 @@
         <QuizHeader />
         <QuizStart @setname="setname" />
         <QuizUser :username="name" :visible="visible" />
-        <QuizItems :quizzes="quizzes" :visible="visible" />
+        <QuizItems :quizzes="quizzes" :visible="visible" @showPoints="showPoints" @addPoints="addPoints" />
+        <QuizQuestionsEnd :visible="pointsVisible" :username="name" :points="points" />
     </div>
 </template>
 
@@ -12,19 +13,23 @@ import QuizHeader from './header/QuizHeader';
 import QuizStart from './start/QuizStart';
 import QuizUser from './QuizUser';
 import QuizItems from './items/QuizItems';
+import QuizQuestionsEnd from './QuizQuestionsEnd';
 export default {
     name: 'Quiz',
     components: {
         QuizHeader,
         QuizStart,
         QuizUser,
-        QuizItems
+        QuizItems,
+        QuizQuestionsEnd
     },
     data() {
         return {
+            points: 0,
             name: null,
             quizzes: [],
-            visible: false
+            visible: false,
+            pointsVisible: false
         }
     },
     methods: {
@@ -32,6 +37,12 @@ export default {
             this.name = name;
             this.quizzes = quizzes;
             this.visible = visible;
+        },
+        showPoints: function () {
+            this.pointsVisible = true;
+        },
+        addPoints: function () {
+            this.points += 10;      
         }
     }
 }

@@ -19,10 +19,9 @@ export default {
     },
     methods: {
         nextQuestion: function (value) {
-            if (this.quizzes[this.questionCount].correct_answer === value) alert('Well done');
-            if (this.questionCount == 14) return alert('Done');
+            if (this.quizzes[this.questionCount].correct_answer === value) this.$emit('addPoints');
+            if (this.questionCount == 14) return this.$emit('showPoints');
             this.questionCount++;
-
         }
     }
 }
