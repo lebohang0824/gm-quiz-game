@@ -1,6 +1,6 @@
 <template>
     <div v-if="visible" id="quiz-items">
-        <QuizItem @submit="nextQuestion" :quiz="quizzes[questionCount]" />
+        <QuizItem @submit="nextQuestion" :quiz="quizzes[questionCount]" :questionCount="questionCount" />
     </div>
 </template>
 

@@ -26,6 +26,11 @@ export default {
             const name = e.target[0].value;
             const difficulty = e.target[1].value;
 
+            // Validation
+            if (name.trim().length < 1) {
+                return alert('Enter username');
+            }
+
             const res = await axios.get(`https://opentdb.com/api.php?amount=15&category=9&difficulty=${difficulty}`);
             const quizzes = res.data.results;
 
