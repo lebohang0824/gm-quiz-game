@@ -1,12 +1,16 @@
 <template>
     <div id="quiz">
-        <h1>Hello</h1>
+        <QuizHeader />
     </div>
 </template>
 
 <script>
+import QuizHeader from './header/QuizHeader';
 export default {
     name: 'Quiz',
+    components: {
+        QuizHeader
+    },
     props: {
     }
 }
