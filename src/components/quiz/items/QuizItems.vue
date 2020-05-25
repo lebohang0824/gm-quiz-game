@@ -18,9 +18,11 @@ export default {
         }
     },
     methods: {
-        nextQuestion: function () {
+        nextQuestion: function (value) {
+            if (this.quizzes[this.questionCount].correct_answer === value) alert('Well done');
             if (this.questionCount == 14) return alert('Done');
             this.questionCount++;
+
         }
     }
 }
