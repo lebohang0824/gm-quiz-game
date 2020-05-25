@@ -22,15 +22,14 @@ import axios from 'axios';
 export default {
     name: 'QuizStartForm',
     methods: {
-        onSubmit: async (e) => {
+        onSubmit: async function(e) {
             const name = e.target[0].value;
             const difficulty = e.target[1].value;
 
-            console.log(name, difficulty);
-            const url = `https://opentdb.com/api.php?amount=15&category=9&difficulty=${difficulty}`;
+            const res = await axios.get(`https://opentdb.com/api.php?amount=15&category=9&difficulty=${difficulty}`);
+            const quizzes = res.data.results;
 
-            const res = await axios.get(url);
-            console.log(res.data.results);
+            this.$emit('setname', name, quizzes);
         }
     }
     

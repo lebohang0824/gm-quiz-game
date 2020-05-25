@@ -1,8 +1,8 @@
 <template>
     <div id="quiz">
         <QuizHeader />
-        <QuizStart />
-        <p v-bind:bind="store"></p>
+        <QuizStart @setname="setname" />
+        <p>{{ name }}</p>
     </div>
 </template>
 
@@ -15,9 +15,16 @@ export default {
         QuizHeader,
         QuizStart
     },
-    props: {
-        store: {
-            user: 'Lebohang'
+    data() {
+        return {
+            name: null,
+            quizzes: []
+        }
+    },
+    methods: {
+        setname: function(name, quizzes) {
+            this.name = name;
+            this.quizzes = quizzes;
         }
     }
 }

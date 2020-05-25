@@ -1,7 +1,7 @@
 <template>
-    <div id="quiz-start">
+    <div id="quiz-start" v-if="showStart">
         <h2>Start Quiz</h2>
-        <QuizStartForm />
+        <QuizStartForm @setname="setname" />
     </div>
 </template>
 
@@ -11,6 +11,17 @@ export default {
     name: 'QuizStart',
     components: {
         QuizStartForm
+    },
+    data() {
+        return {
+            showStart: true,
+        }
+    },
+    methods: {
+        setname: function(name, quizzes) {
+            this.$emit('setname', name, quizzes);
+            this.showStart = false;
+        }
     }
 }
 </script>
