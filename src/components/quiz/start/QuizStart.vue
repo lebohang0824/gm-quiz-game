@@ -19,7 +19,7 @@ export default {
     },
     methods: {
         setname: function(name, quizzes) {
-            this.$emit('setname', name, quizzes);
+            this.$emit('setname', name, quizzes, true);
             this.showStart = false;
         }
     }
